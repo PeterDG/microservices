@@ -1,6 +1,14 @@
 FROM jboss/apiman-wildfly
-MAINTAINER Arun Gupta <arungupta@redhat.com>
 
-ADD microservice /opt/jboss/wildfly/microservice
+ADD everest-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
+ADD catalog.war /opt/jboss/wildfly/standalone/deployments/
+ADD order.war /opt/jboss/wildfly/standalone/deployments/
+ADD user.war /opt/jboss/wildfly/standalone/deployments/
+ADD everest-web.war /opt/jboss/wildfly/standalone/deployments/
+ADD sample.war /opt/jboss/wildfly/standalone/deployments/
 
-CMD ["/opt/jboss/wildfly/microservice/create-resources.sh"]
+#MAINTAINER Arun Gupta <arungupta@redhat.com>
+#
+#ADD microservice /opt/jboss/wildfly/microservice
+#
+#CMD ["/opt/jboss/wildfly/microservice/create-resources.sh"]
